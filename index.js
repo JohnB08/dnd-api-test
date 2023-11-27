@@ -6,19 +6,13 @@ const fetchApi = async () => {
   return result;
 };
 
-const getMonsterList = async () => {
-  const monsterList = await fetchApi();
-  console.log(monsterList);
-  return monsterList;
-};
-
 const randomMonsterPicker = (array) => {
   const randomArrayIndex = Math.floor(Math.random() * array.length);
   return array[randomArrayIndex];
 };
 
 const randomMonster = async () => {
-  const monsterList = await getMonsterList();
+  const monsterList = await fetchApi();
   const randomMonster = randomMonsterPicker(monsterList.results);
   console.log(randomMonster);
 };
